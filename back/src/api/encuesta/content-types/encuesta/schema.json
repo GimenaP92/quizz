@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "encuestas",
+  "info": {
+    "singularName": "encuesta",
+    "pluralName": "encuestas",
+    "displayName": "Encuesta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "statusE": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Cancel"
+      ]
+    },
+    "preguntas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pregunta.pregunta",
+      "mappedBy": "encuesta"
+    }
+  }
+}

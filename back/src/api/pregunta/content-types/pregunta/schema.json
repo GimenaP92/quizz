@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "preguntas",
+  "info": {
+    "singularName": "pregunta",
+    "pluralName": "preguntas",
+    "displayName": "Pregunta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "options": {
+      "type": "enumeration",
+      "enum": [
+        "T-shirt",
+        "Jeans",
+        "Cap",
+        "Sunglasses"
+      ]
+    },
+    "correct_answer": {
+      "type": "string"
+    },
+    "encuesta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::encuesta.encuesta",
+      "inversedBy": "preguntas"
+    }
+  }
+}
