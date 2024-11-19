@@ -5,7 +5,7 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://mi-app.vercel.app'],  // Dominio de tu frontend en Vercel
+      origin: ['https://quizz-xi-three.vercel.app'],
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       headers: ['Content-Type', 'Authorization'],
     },
