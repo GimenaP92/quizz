@@ -5,11 +5,11 @@ Este es un pequeño **proyecto de prueba** para explorar y conocer cómo utiliza
 
 ## Tecnologías utilizadas
 
-- ![Strapi](https://img.icons8.com/ios/452/strapi.png) **Strapi**: Framework Headless CMS para gestionar el backend de las preguntas y respuestas.
-- ![SQLite](https://img.icons8.com/ios/452/sqlite.png) **SQLite**: Base de datos ligera para almacenar las preguntas, respuestas y puntajes.
-- ![Next.js](https://img.icons8.com/ios/452/next.js.png) **Next.js**: Framework de React para el frontend.
-- ![Typescript](https://img.icons8.com/ios/452/typescript.png) **TypeScript**: Para mejorar la escritura del código y la seguridad de los tipos.
-- ![Tailwind](https://img.icons8.com/ios/452/tailwindcss.png) **Tailwind CSS**: Framework de CSS para diseñar la interfaz de usuario.
+- **Strapi**: Framework Headless CMS para gestionar el backend de las preguntas y respuestas.
+- **SQLite**: Base de datos ligera para almacenar las preguntas, respuestas y puntajes.
+- **Next.js**: Framework de React para el frontend.
+-**TypeScript**: Para mejorar la escritura del código y la seguridad de los tipos.
+- **Tailwind CSS**: Framework de CSS para diseñar la interfaz de usuario.
 
 
 
