@@ -1,6 +1,5 @@
 # Proyecto de Quizz - Strapi, SQLite, Next.js, TypeScript, Tailwind
 
-![Quiz App](https://img.icons8.com/ios/452/question-mark.png)
 
 Este es un pequeño **proyecto de prueba** para explorar y conocer cómo utilizar **Strapi** para gestionar contenido en una aplicación backend. En este proyecto, se utilizan dos **entidades**  **relacionadas** entre sí. La finalidad de la aplicación es proporcionar **preguntas de opción múltiple** (tipo **Choice**), que le devuelven al usuario si la respuesta es correcta o incorrecta, además de un **puntaje final** basado en las respuestas correctas.
 
