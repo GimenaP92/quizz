@@ -2,14 +2,7 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  {
-    name: 'strapi::cors',
-    config: {
-      origin: ['https://quizz-xi-three.vercel.app'],
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      headers: ['Content-Type', 'Authorization'],
-    },
-  },
+  'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',

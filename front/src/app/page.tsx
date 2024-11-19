@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import QuizzComponent from "@/component/QuizzComponent";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 const QuizzPage = () => {
   const [encuestas, setEncuestas] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -10,7 +12,7 @@ const QuizzPage = () => {
   useEffect(() => {
     const fetchEncuestas = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/encuestas?populate=preguntas`);
+        const response = await fetch(`${apiUrl}/api/encuestas?populate=preguntas`);
         const data = await response.json();
         setEncuestas(data.data);
         setLoading(false);
