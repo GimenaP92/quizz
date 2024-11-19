@@ -10,7 +10,7 @@ const QuizzPage = () => {
   useEffect(() => {
     const fetchEncuestas = async () => {
       try {
-        const response = await fetch("http://localhost:1337/api/encuestas?populate=preguntas");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/encuestas?populate=preguntas`);
         const data = await response.json();
         setEncuestas(data.data);
         setLoading(false);
