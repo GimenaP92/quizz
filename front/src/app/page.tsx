@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import QuizzComponent from "@/component/QuizzComponent";
 
+
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const QuizzPage = () => {
@@ -26,16 +27,19 @@ const QuizzPage = () => {
   }, []);
 
   if (loading) {
-    return <p>Cargando...</p>;
+    return <div className="w-12 h-12 border-4 border-blue-500"></div>
+
+  
+ 
   }
 
   if (error) {
     return <p>{error}</p>;
   }
-
+  
   return (
-    <div className="min-h-screen bg-gray-100 py-6 px-4">
-      <h1 className="text-3xl font-semibold text-center text-gray-800 mb-8">Welcome to Quizz</h1>
+    <div className="min-h-screen  py-6 px-4">
+      <h1 className="text-3xl font-semibold text-center border-slate-600  mb-8">Welcome to Quizz</h1>
       <QuizzComponent encuestas={encuestas} />
     </div>
   );

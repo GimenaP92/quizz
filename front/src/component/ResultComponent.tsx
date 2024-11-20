@@ -14,8 +14,7 @@ interface ResultProps {
             <div key={pregunta.id}>
               <p>{pregunta.question}</p>
               <p><strong>Respuesta Correcta:</strong> {pregunta.correct_answer}</p>
-              <p><strong>Tu Respuesta: </strong> {userAnswers[pregunta.id]}</p>
-            </div>
+                </div>
           ))}
         </div>
       </div>

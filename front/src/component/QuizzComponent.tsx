@@ -10,10 +10,10 @@ const QuizzComponent = ({ encuestas }: any) => {
   const [score, setScore] = useState(0);
 
   if (!encuestas || encuestas.length === 0) {
-    return <p className="text-center text-gray-500">No hay encuestas disponibles.</p>;
+    return <p className="text-center text-slate-50">No hay encuestas disponibles.</p>;
   }
-
-  const encuesta = encuestas[0]; // Asumimos que trabajamos con la primera encuesta por ahora.
+  
+  const encuesta = encuestas[0]; 
   const preguntas = encuesta.preguntas;
 
   const handleAnswer = (questionId: string, selectedOption: string, isCorrect: boolean) => {
@@ -32,27 +32,28 @@ const QuizzComponent = ({ encuestas }: any) => {
     }
   };
 
-  // Este es el manejo del evento de "Ver Resultados"
+
   const handleSeeResults = () => {
-    setCurrentQuestionIndex(preguntas.length); // Cambia el índice para mostrar los resultados
+    setCurrentQuestionIndex(preguntas.length); 
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">{encuesta.title}</h2>
-      <p className="text-center text-gray-600 mb-6">{encuesta.description}</p>
+    <div className="max-w-4xl mx-auto p-6 bg-slate-50 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-semibold text-center  mb-4">{encuesta.title}</h2>
+      <p className="text-center mb-6">{encuesta.description}</p>
 
-      {/* Si ya terminamos las preguntas, mostramos los resultados */}
+     
       {currentQuestionIndex === preguntas.length ? (
         <ResultComponent
           score={score}
+
           totalQuestions={preguntas.length}
           userAnswers={userAnswers}
           preguntas={preguntas}
         />
       ) : (
         <>
-          {/* Renderizar pregunta actual */}
+         
           <QuestionComponent
             pregunta={preguntas[currentQuestionIndex]}
             onAnswer={handleAnswer}
@@ -60,13 +61,13 @@ const QuizzComponent = ({ encuestas }: any) => {
             isAnswered={userAnswers[preguntas[currentQuestionIndex].id] !== undefined}
           />
 
-          {/* Navegación con un solo botón */}
+         
           <NavigationComponent
             currentIndex={currentQuestionIndex}
             totalQuestions={preguntas.length}
             onNext={handleNextQuestion}
             canNext={userAnswers[preguntas[currentQuestionIndex].id] !== undefined}
-            handleSeeResults={handleSeeResults} // Usar handleSeeResults aquí
+            handleSeeResults={handleSeeResults} 
           />
         </>
       )}

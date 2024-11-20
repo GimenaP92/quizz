@@ -12,24 +12,24 @@ interface QuestionProps {
   pregunta: any;
   onAnswer: (questionId: string, selectedOption: string, isCorrect: boolean) => void;
   selectedOption: string | undefined;
-  isAnswered: boolean;  // Indica si la pregunta ya ha sido respondida
+  isAnswered: boolean; 
 }
 
 const QuestionComponent: React.FC<QuestionProps> = ({ pregunta, onAnswer, selectedOption, isAnswered }) => {
   const handleOptionChange = (option: string) => {
-    if (isAnswered) return; // No permitir cambiar respuesta una vez respondida
+    if (isAnswered) return; 
     const isCorrect = option === pregunta.correct_answer;
     onAnswer(pregunta.id, option, isCorrect);
   };
 
   return (
-    <div className="p-4 bg-gray-50 rounded-md shadow-sm">
-      <p className="text-lg font-medium text-gray-800 mb-2">{pregunta.title}</p>
+    <div className="p-4 mt-12 bg-slate-900 rounded-md shadow-sm">
+      <p className="text-lg font-medium text-slate-50 mt-16 mb-2">{pregunta.title}</p>
 
-      {/* Opciones */}
-      <ul className="mt-4 space-y-2">
+      
+      <ul className="mt-4 space-y-2 ">
         {Object.values(QuizOptions).map((option, index) => (
-          <li key={index} className="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 cursor-pointer">
+          <li key={index} className="p-2 rounded-lg hover:bg-gray-200 cursor-pointer">
             <input
               type="radio"
               id={`${pregunta.id}-${option}`}
@@ -37,7 +37,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ pregunta, onAnswer, select
               value={option}
               onChange={() => handleOptionChange(option)}
               checked={selectedOption === option}
-              disabled={isAnswered} // Deshabilitar opciones si la pregunta ya ha sido respondida
+              disabled={isAnswered} 
               className="mr-2"
             />
             <label htmlFor={`${pregunta.id}-${option}`}>{option}</label>
@@ -45,9 +45,9 @@ const QuestionComponent: React.FC<QuestionProps> = ({ pregunta, onAnswer, select
         ))}
       </ul>
 
-      {/* Feedback inmediato */}
+      
       {selectedOption && (
-        <p className={`mt-2 text-sm ${selectedOption === pregunta.correct_answer ? 'text-green-600' : 'text-red-600'}`}>
+        <p className={`mt-2 text-sm text-slate-50 ${selectedOption === pregunta.correct_answer ? 'text-green-600' : 'text-red-600'}`}>
           {selectedOption === pregunta.correct_answer ? '¡Correcto!' : 'Respuesta incorrecta.'}
         </p>
       )}
