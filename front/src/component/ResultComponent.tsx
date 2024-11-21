@@ -7,8 +7,8 @@ interface ResultProps {
   
   const ResultComponent = ({ score, totalQuestions, userAnswers, preguntas }: any) => {
     return (
-      <div className="result">
-        <h3>Tu Puntaje: {score} / {totalQuestions}</h3>
+      <div className="">
+        <h3 className="result">Tu Puntaje: {score} / {totalQuestions}</h3>
         <div className="answers">
           {preguntas.map((pregunta: any) => (
             <div key={pregunta.id}>
